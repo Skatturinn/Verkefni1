@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="is">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="veitingastadur, Bóntbitar Björns">
+	<meta name="description" content="Besti veitingastaðurinn.">
+	<meta property="og:title" content="Panta Bóntbitar Björns">
+	<meta property="og:description" content="Fullkominn áfangastaður fyrir ógleymanlega matarupplifun">
+	<meta property="og:image" content="../myndir/sharing.jpg">
+	<link rel="stylesheet" type="text/css" href="../styles.css">
+	<title>Pantanir | Bóntbitar Björns</title>
+
+</head>
+
+<body>
+	<header>
+		<h1>Pantanir</h1>
+		<p>
+			Pantaðu borð og mættu til okkar eða pantaðu mat sem við sendum þér eða
+			þú sækir.
+		</p>
+	</header>
+	<a class="sr-only" href="#panta">Beint í efnið</a>
+	<nav>
+		<menu>
+			<li><a href="../index.html">Forsíða</a></li>
+			<li><a href="um.html">Um</a></li>
+			<li><a href="matsedill.html">Matseðill</a></li>
+			<li><strong>Pöntun</strong></li>
+		</menu>
+	</nav>
+	<main id="panta">
+		<form action="#" id="bord" class="block_setup">
+			<fieldset>
+				<legend>Panta borð</legend>
+				<div>
+					<label for="timi">Hvenær viltu koma?<br></label>
+					<input type="datetime-local" name="timi" id="timi">
+				</div>
+				<div>
+					<label for="fjoldi">Hve mörg?<br></label>
+					<select name="val um 1-10" id="fjoldi">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+				</div>
+				<div>
+					<label for="oskin">Viltu taka eitthvað fram?<br></label>
+					<input type="text" name="oskin" id="oskin">
+				</div>
+				<!-- Gæti verið textarea -->
+			</fieldset>
+
+			<fieldset>
+				<legend>Panta mat</legend>
+				<div>
+					<label for="food1">Réttur #1<br></label>
+					<input id="food1" list="foods">
+				</div>
+				<div>
+					<label for="food2">Réttur #2<br></label>
+					<input id="food2" list="foods">
+				</div>
+				<div>
+					<label for="food3">Réttur #3<br></label>
+					<input id="food3" list="foods">
+				</div>
+				<div>
+					<label for="food4">Réttur #4<br></label>
+					<input id="food4" list="foods">
+				</div>
+				<div>
+					<label for="food5">Réttur #5<br></label>
+					<input id="food5" list="foods">
+				</div>
+				<div>
+					<label for="address">Heimilisfang<br></label>
+					<input type="text" id="address">
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Þínar upplýsingar</legend>
+				<div>
+					<label for="Nafn">Nafn<br></label>
+					<input type="text" name="Nafn" id="Nafn" required>
+
+				</div>
+				<div>
+					<label for="Netfang">Netfang<br></label>
+					<input type="email" name="Netfang" id="Netfang" placeholder="nafn@tolvupostur.is">
+				</div>
+				<div>
+					<label for="Sími">Sími<br></label>
+					<input type="tel" name="Sími" id="Sími" placeholder="8512345" required>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Samþykkja og panta</legend>
+					<label>
+						<input type="checkbox" name="terms"><label>Ég samþykki skilmála
+						Veitingastaðsins<br></label>
+				</div>
+				<button>
+					Panta
+				</button>
+			</fieldset>
+			<datalist id="foods">
+				<option>Lasagna</option>
+				<option>Sveppa risotto</option>
+				<option>Ferskt pasta</option>
+				<option>Quesadilla</option>
+				<option>Falafel með</option>
+				<option>Súpa dagsins</option>
+				<option>Kryddaðar sætkartöflur</option>
+				<option>Hamborgari</option>
+				<option>Pizza</option>
+			</datalist>
+		</form>
+		<p><a href="../index.html">Aftur á forsíðu</a></p>
+	</main>
+	<footer>
+
+		<ol>
+			<li>
+				<h2>Opnunartími</h2>
+				<dl>
+					<dt>Mánudaga til fimmtudaga</dt>
+					<dd><time datetime="09:00">09:00</time>-<time datetime="18:00">18:00</time></dd>
+					<dt>Föstudaga</dt>
+					<dd><time datetime="10:00">10:00</time>-<time datetime="22:00">22:00</time></dd>
+					<dt>Laugardaga</dt>
+					<dd><time datetime="11:00">11:00</time>-<time datetime="22:00">22:00</time></dd>
+					<dt>Sunnudaga</dt>
+					<dd>Lokað</dd>
+				</dl>
+			</li>
+			<!-- Hvernig merkiru "-" sem frá - til -->
+			<li>
+				<h2>Hér erum við</h2>
+				<ul>
+					<li>Veitingastaðurinn ehf.</li>
+					<li>
+						<address>Aðalgata 10 <br>100 Reykjavík</address>
+					</li>
+					<li><a href="tel:3334567">Sími 333-4567</a></li>
+					<li>
+						<a href="mailto:veitingastadur@example.org">veitingastadur@example.org</a>
+					</li>
+				</ul>
+			</li>
+		</ol>
+
+	</footer>
+</body>
+
+</html>
