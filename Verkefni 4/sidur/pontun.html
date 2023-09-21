@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="is">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="veitingastadur, Bóntbitar Björns">
+	<meta name="description" content="Besti veitingastaðurinn.">
+	<meta property="og:title" content="Panta Bóntbitar Björns">
+	<meta property="og:description" content="Fullkominn áfangastaður fyrir ógleymanlega matarupplifun">
+	<meta property="og:image" content="../myndir/sharing.jpg">
+	<link rel="stylesheet" type="text/css" href="../styles.css">
+	<title>Pantanir | Bóntbitar Björns</title>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<header>
+				<h1>Pantanir</h1>
+				<p>
+					Pantaðu borð og mættu til okkar eða pantaðu mat sem við sendum þér eða
+					þú sækir.
+				</p>
+			</header>
+
+			<a class="sr-only" href="#panta">Beint í efnið</a>
+
+			<nav class="navigation">
+				<menu>
+					<li><a href="../index.html">Forsíða</a></li>
+					<li><a href="um.html">Um</a></li>
+					<li><a href="matsedill.html">Matseðill</a></li>
+					<li><strong>Pöntun</strong></li>
+				</menu>
+			</nav>
+		</div>
+
+		<main class="main" id="panta">
+			<div class="hluti">
+				<form method="post" action="." class="boxes">
+					<fieldset class="box_field">
+						<legend>Panta borð</legend>
+						<div class="column">
+							<label for="when">Hvenær viltu koma?</label>
+							<input type="datetime-local" id="when" name="when">
+						</div>
+						<div class="column">
+							<label for="size">Hve mörg?</label>
+							<select id="size">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+							</select>
+						</div>
+						<div class="column">
+							<label for="special">Viltu taka eitthvað fram?</label>
+							<textarea id="special"></textarea>
+						</div>
+					</fieldset>
+					<fieldset class="box_field">
+						<legend>Panta mat</legend>
+						<div class="column">
+							<label for="food1">Réttur #1</label>
+							<input id="food1" list="foods">
+						</div>
+						<div class="column">
+							<label for="food2">Réttur #2</label>
+							<input id="food2" list="foods">
+						</div>
+						<div class="column">
+							<label for="food3">Réttur #3</label>
+							<input id="food3" list="foods">
+						</div>
+						<div class="column">
+							<label for="food4">Réttur #4</label>
+							<input id="food4" list="foods">
+						</div>
+						<div class="column">
+							<label for="food5">Réttur #5</label>
+							<input id="food5" list="foods">
+						</div>
+						<div class="column">
+							<label for="address">Heimilisfang</label>
+							<input type="text" id="address">
+						</div>
+					</fieldset>
+					<fieldset class="box_field">
+						<legend>Þínar upplýsingar</legend>
+						<div class="column">
+							<label for="name">Nafn</label>
+							<input id="name" type="text" required>
+						</div>
+						<div class="column">
+							<label for="email">Netfang</label>
+							<input id="email" name="email" type="email" required placeholder="nafn@example.org">
+						</div>
+						<div class="column">
+							<label for="phone">Sími</label>
+							<input id="phone" type="tel" required placeholder="345-6789">
+						</div>
+					</fieldset>
+					<fieldset class="box_field">
+						<legend>Samþykkja og panta</legend>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="terms" class="initial"><span>Ég samþykki skilmála
+									Veitingastaðsins</span></label>
+						</div>
+						<button>Panta</button>
+					</fieldset>
+					<datalist id="foods">
+						<option>Lasagna</option>
+						<option>Sveppa risotto</option>
+						<option>Ferskt pasta</option>
+						<option>Quesadilla</option>
+						<option>Falafel með</option>
+						<option>Súpa dagsins</option>
+						<option>Kryddaðar sætkartöflur</option>
+						<option>Hamborgari</option>
+						<option>Pizza</option>
+					</datalist>
+				</form>
+				<a href="../index.html">Aftur á forsíðu</a>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<section class="hluti">
+				<h2>Opnunartími</h2>
+				<dl class="list">
+					<dt>Mánudaga til fimmtudaga</dt>
+					<dd><time datetime="09:00">09:00</time>-<time datetime="18:00">18:00</time></dd>
+					<dt>Föstudaga</dt>
+					<dd><time datetime="10:00">10:00</time>-<time datetime="22:00">22:00</time></dd>
+					<dt>Laugardaga</dt>
+					<dd><time datetime="11:00">11:00</time>-<time datetime="22:00">22:00</time></dd>
+					<dt>Sunnudaga</dt>
+					<dd>Lokað</dd>
+				</dl>
+			</section>
+
+			<section class="hluti">
+				<h2>Hér erum við</h2>
+				<ul class="list">
+					<li>Veitingastaðurinn ehf.</li>
+					<li>
+						<address>Aðalgata 10 <br>100 Reykjavík</address>
+					</li>
+					<li><a href="tel:3334567">Sími 333-4567</a></li>
+					<li>
+						<a href="mailto:veitingastadur@example.org">veitingastadur@example.org</a>
+					</li>
+				</ul>
+				</ul>
+			</section>
+		</footer>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+@import url(fonts/Lora/);
+@import url(fonts/Noto_Sans_Display/);
+/* Leturgerðir */
+
+/* Reset og border-box á allt */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Stillingar */
+
+:root {
+  /* Grunn bilið okkar er 1rem == 16px */
+  --font-base-body-px: 16px;
+  --spacing: 1rem;
+
+  /* Hámarksbreidd á efni */
+  --max-width: 900px;
+
+  /* Border breiddir */
+  --border-small: 1px;
+  --border-large: 8px;
+  --border-radius: 6px;
+
+  /* Litir */
+  --color-gold: #ffe7ae;
+  --color-gold-light: #fff1cf;
+  --color-dark: #2f0505;
+  --color-light: #fff9ee;
+
+  /* Letur stillingar */
+  --font-base-size: 1rem;
+  --font-family-base: "Noto Sans Display", Helvetica, Arial, sans-serif;
+  --font-family-heading: "Lora", Georgia, serif;
+}
+
+/* Almennt */
+
+/** Skilgreininar sem gilda fyrir allt efni og nota type selectora **/
+
+html,
+input,
+select,
+button {
+  font-size: var(--font-base-body-px);
+  line-height: 1.5rem;
+}
+dl dt {
+  font-weight: 700;
+}
+dl dd {
+  padding: 0 0 0.75rem 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-heading);
+  text-shadow: inherit;
+}
+
+a {
+  color: inherit;
+  background-color: inherit;
+}
+img {
+  max-width: 100%;
+}
+
+/** Hjálpar class sem felur sjónrænt en skjálesarar lesa **/
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* Layout */
+
+.wrapper {
+  font-family: var(--font-family-base);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-evenly;
+  width: auto;
+  height: auto;
+}
+
+/** Haus **/
+
+.header {
+  border-bottom: 0.5rem solid #ffe7ae;
+  font-family: var(--font-family-base);
+}
+
+.header header {
+  padding: 0.5rem 0 0 0;
+  background-color: #2f0505;
+  color: #fff1cf;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.header header p {
+  padding: 1rem 0 1rem 0;
+}
+
+/** Valmynd **/
+
+.navigation {
+  text-align: center;
+  padding: 1rem;
+  background-color: #fff9ee;
+  color: #2f0505;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigation menu {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  list-style: none;
+}
+
+/** Meginmál **/
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+}
+.main .hluti {
+  display: flex;
+  flex-direction: column;
+  width: var(--max-width);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Meginmál - tafla : Matseðill */
+/* endurnotað úr verk 3 */
+
+table {
+  border: 0rem;
+  border-collapse: collapse;
+  width: 56.25rem;
+  padding: 0 0 1rem 0rem;
+}
+th {
+  padding: 0.5rem;
+}
+td {
+  padding: 0.5rem;
+}
+
+table tbody tr:nth-child(odd) {
+  width: 100%;
+  margin: 0rem;
+  background-color: #ffe7ae;
+}
+
+/** Fótur **/
+
+.footer {
+  background-color: #2f0505;
+  border-top: #fff1cf var(--border-large) solid;
+  color: #fff1cf;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.footer .hluti {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0 0 0;
+}
+.footer .hluti .list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Box! */
+
+.boxes {
+  width: var(--max-width);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem 1rem;
+  align-items: stretch;
+}
+
+.boxes .box {
+  list-style: none;
+  flex: 45%;
+  background-color: #fff1cf;
+  border: #fff1cf solid var(--border-large);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.boxes .box .title {
+  border-bottom: black solid var(--border-small);
+  margin: 0 0 1.25rem 0;
+}
+.boxes .box .link {
+  margin: auto 0 0 0;
+  font-weight: bold;
+}
+.boxes .box p {
+  margin: 0 0 1.5rem 0;
+}
+
+/* content */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  width: auto;
+  height: auto;
+}
+.content img {
+  object-fit: cover;
+  object-position: top;
+  max-height: 400px;
+}
+
+.content dl dd {
+  padding: 0 0 0.75rem 0;
+}
+
+/* popular */
+.popular {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0 0 0;
+}
+
+/* Pöntunarform */
+/* Input fyrir pontunarsidu */
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.column textarea {
+  height: 3.5rem;
+  width: 11rem;
+}
+.boxes .box_field {
+  gap: 1rem;
+  padding: 0.5rem;
+  list-style: none;
+  flex: 45%;
+  background-color: #fff1cf;
+  border: #fff1cf solid var(--border-large);
+  border-radius: var(--border-radius);
+  margin: 0rem 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  border: var(--border-small) #2f0505 solid;
+}
+
+.box_field legend {
+  font-weight: 700;
+}
+.box_field select {
+  border-color: #8f8f9d;
+  border: 0.0625rem solid;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  width: 3.5rem;
+  height: 3rem;
+}
+.box_field input {
+  padding: 0 0.5rem;
+  min-height: 2.5rem;
+}
+.box_field .checkbox input {
+  min-height: initial;
+}
+.box_field .checkbox label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.box_field button {
+  font-family: inherit;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  border-top-color: #e3e3e3;
+  border-left-color: #e3e3e3;
+  border-right-color: #979797;
+  border-bottom-color: #979797;
+}
