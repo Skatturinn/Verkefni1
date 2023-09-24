@@ -148,7 +148,6 @@ img {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  gap: 1rem;
 }
 .main .hluti {
   display: flex;
@@ -218,6 +217,7 @@ table tbody tr:nth-child(odd) {
   justify-content: space-evenly;
   gap: 2rem 1rem;
   align-items: stretch;
+  margin: 0 0 1rem 0;
 }
 
 .boxes .box {
