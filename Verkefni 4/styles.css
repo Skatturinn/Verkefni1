@@ -294,7 +294,6 @@ table tbody tr:nth-child(odd) {
   background-color: #fff1cf;
   border: #fff1cf solid var(--border-large);
   border-radius: var(--border-radius);
-  margin: 0rem 0 1rem 0;
   display: flex;
   flex-direction: column;
   border: var(--border-small) #2f0505 solid;
