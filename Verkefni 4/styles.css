@@ -148,6 +148,7 @@ img {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  /* gap: 1rem; */
 }
 .main .hluti {
   display: flex;
@@ -155,7 +156,11 @@ img {
   width: var(--max-width);
   flex-wrap: wrap;
   gap: 1rem;
+  /* margin: 0 0 1rem 0; */
 }
+/* .main .hluti p {
+	margin: 0 0 1rem 0;
+} */
 
 /* Meginmál - tafla : Matseðill */
 /* endurnotað úr verk 3 */
