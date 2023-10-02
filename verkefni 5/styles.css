@@ -1,0 +1,446 @@
+/* Reset og border-box á allt */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Leturgerðir */
+
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-display: swap;
+  src: url(./fonts/Lora-VariableFont_wght.ttf) format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans Display";
+  font-style: normal;
+  font-display: swap;
+  src: url(./fonts/NotoSansDisplay-VariableFont.ttf) format("woff");
+}
+
+/* Stillingar */
+
+:root {
+  /* Grunn bilið okkar er 1rem == 16px */
+  --font-base-body-px: 16px;
+  --spacing: 1rem;
+
+  /* Hámarksbreidd á efni */
+  --max-width: 1400px;
+
+  /* Border breiddir */
+  --border-small: 1px;
+  --border-large: 8px;
+  --border-radius: 6px;
+
+  /* Litir */
+  --color-gold: #ffe7ae;
+  --color-gold-light: #fff1cf;
+  --color-dark: #2f0505;
+  --color-light: #fff9ee;
+
+  --color-primary: #f0f0f8;
+  --color-header: #fff;
+  --color-text: #000;
+  --color-border: #ccc;
+
+  /* Letur stillingar */
+  --font-base-size: 1rem;
+  --font-family-base: "Noto Sans Display", Helvetica, Arial, sans-serif;
+  --font-family-heading: "Lora", Georgia, serif;
+
+  /* grid css */
+  --grid-breidd: calc(100% - (2 * var(--offset)));
+  --offset: 20px;
+  --max_width: 1400px;
+  --columns: 12;
+  --gutter: 30px;
+  --grid-color: hsla(0, 75%, 75%, 0.25);
+  --grid-repeating-width: calc(100% / var(--columns));
+  --grid-column-width: calc((100% / var(--columns)) - var(--gutter));
+  --grid-background-width: calc(100% + var(--gutter));
+  /* SLÖKKT Á GRIDDI */
+  /* --grid-background-columns: repeating-linear-gradient(
+    to right,
+    var(--grid-color),
+    var(--grid-color) var(--grid-column-width),
+    transparent var(--grid-column-width),
+    transparent var(--grid-repeating-width)
+  ); */
+}
+/* grid css */
+html {
+  position: relative;
+}
+/* GRID FYRIR SKALANLEIKA
+html::before {
+
+  content: "";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+
+
+  width: calc(100% - (2 * var(--offset)));
+  max-width: var(--max-width);
+  min-height: 100vh;
+  background-image: var(--grid-background-columns);
+  background-size: var(--grid-background-width) 100%;
+  z-index: 1000;
+  pointer-events: none;
+} */
+
+/* Almennt */
+
+html,
+input,
+select,
+button {
+  font-size: var(--font-base-body-px);
+  font-family: var(--font-family-base);
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  /* Setjum almennt bil á eftir fyrirsögnum */
+  margin-bottom: var(--spacing);
+
+  font-family: var(--font-family-heading);
+}
+
+a {
+  color: inherit;
+  background-color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/** Hjálpar class sem felur sjónrænt en skjálesarar lesa **/
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* Layout */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  width: 100%;
+  min-height: 100vh;
+}
+
+/** Haus **/
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing);
+
+  border-bottom: var(--border-large) solid var(--color-gold);
+
+  background-color: var(--color-dark);
+  color: var(--color-gold-light);
+}
+
+.header header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.header h1,
+.header p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/** Valmynd **/
+
+.navigation {
+  padding: var(--spacing);
+  width: 100%;
+
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  text-align: center;
+}
+
+.navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing);
+  width: 100%;
+  list-style: none;
+}
+
+/** Meginmál **/
+/* grunnur skalanleika boxa */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto var(--offset) auto;
+  width: var(--grid-breidd);
+  max-width: var(--max-width);
+  gap: var(--offset);
+}
+
+/** Fótur **/
+
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing);
+
+  padding: var(--spacing);
+  border-top: var(--border-large) solid var(--color-gold);
+
+  background-color: var(--color-dark);
+  color: var(--color-gold-light);
+
+  text-align: center;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+
+/* box fyrir skalanleika */
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 2) var(--spacing);
+  margin: 0 0 var(--offset) 0;
+  width: 100%;
+}
+
+.boxes .box {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--spacing);
+
+  padding: calc(var(--spacing) * 0.5);
+  width: calc(50% - var(--spacing) * 0.5);
+  min-height: 100px;
+  flex: 1;
+  color: var(--color-dark);
+  background-color: var(--color-gold-light);
+  border-radius: 5px;
+}
+
+.boxes .box .title {
+  margin-bottom: calc(var(--spacing) * 0.5);
+  border-bottom: var(--border-small) solid var(--color-dark);
+}
+
+.boxes .box .content {
+  flex: 1;
+}
+
+.boxes .box img {
+  /* align-items: center; */
+  max-height: 400px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Nýr takki */
+.main .link {
+  margin: auto 0 0 0;
+  border-radius: var(--border-radius);
+  background-color: #2f0505;
+  color: var(--color-gold-light);
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.5s;
+  border: 1px #2f0505 solid;
+}
+.main .link:hover {
+  background-color: var(--color-gold);
+  color: #2f0505;
+}
+
+/* Opnunartími */
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: var(--spacing);
+}
+
+/* Matseðill */
+
+table {
+  border-spacing: 0;
+  margin: 0 0 var(--gutter) 0;
+}
+
+table th,
+table td {
+  padding: calc(var(--spacing) * 0.5);
+}
+
+table tbody tr:nth-child(2n + 1) {
+  color: var(--color-dark);
+  background-color: var(--color-gold);
+}
+
+/* Pöntunarform */
+
+fieldset {
+  border: var(--border-small) solid var(--color-dark);
+}
+
+fieldset legend {
+  font-weight: bold;
+}
+
+fieldset div label {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset input,
+fieldset select,
+fieldset textarea {
+  padding: calc(var(--spacing) * 0.5);
+}
+
+fieldset .checkbox label {
+  flex-direction: row;
+  gap: calc(var(--spacing) * 0.5);
+}
+
+form button {
+  padding: calc(var(--spacing) * 0.25);
+  border-radius: var(--border-radius);
+}
+
+/* fade in animation fyrir opnun síðu*/
+body {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Breytingar á byrtingum boxxa */
+/* <500 */
+@media (max-width: 500px) {
+  .header {
+    border: none;
+  }
+  .header header {
+    /* til að texti sé læsilegur <500px */
+    display: block;
+    max-width: 100%;
+    padding: 1rem 0 0 0;
+    width: var(--grid-breidd);
+  }
+
+  .main {
+    align-items: center;
+  }
+  .boxes {
+    flex-direction: column;
+    overflow: auto;
+  }
+  .boxes .box {
+    width: 100%;
+    flex-basis: 100%;
+  }
+  .popular {
+    width: 100%;
+  }
+  .popular .boxes {
+    margin-bottom: 2rem;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}
+
+/* 500<1000 */
+@media (min-width: 501px) and (max-width: 1000px) {
+  .main {
+    margin: var(--offset) auto;
+  }
+
+  .header {
+    padding: 1rem 0 0 0;
+  }
+  .boxes {
+    gap: var(--gutter);
+    margin: 0 0 var(--offset) 0;
+  }
+  .boxes .box {
+    max-width: calc(50% - 0.5 * var(--gutter));
+    flex-basis: 35%;
+  }
+  .footer {
+    gap: 5rem;
+  }
+}
+
+/* stærra en 1000< */
+@media (min-width: 1001px) {
+  .main {
+    margin: var(--offset) auto;
+  }
+  .header header {
+    padding: 1rem 0 0 0;
+  }
+  .boxes {
+    gap: var(--gutter);
+    margin-bottom: var(--offset);
+  }
+  .boxes .box {
+    flex: 1;
+    flex-basis: 25%;
+    max-width: calc(4 * ((100% / var(--columns))) - var(--offset));
+  }
+  .footer {
+    gap: calc(2 * var(--grid-column-width) + 3 * var(--gutter));
+  }
+}
