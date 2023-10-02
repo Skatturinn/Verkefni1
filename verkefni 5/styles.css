@@ -418,6 +418,12 @@ form button {
   .footer{
 	gap: calc(2 * var(--grid-column-width) + var(--gutter));
   }
+  html,
+input,
+select,
+button {
+  font-size: 17.5px;
+}
 }
 
 /* stærra en 1000< */
