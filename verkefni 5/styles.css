@@ -231,6 +231,7 @@ img {
 .footer {
   display: flex;
   justify-content: center;
+  gap: var(--spacing);
 
   padding: var(--spacing);
   border-top: var(--border-large) solid var(--color-gold);
@@ -239,7 +240,6 @@ img {
   color: var(--color-gold-light);
   width: 100%;
   text-align: center;
-  gap: calc(2 * var(--grid-column-width) + 3 * var(--gutter));
 }
 
 .footer ul {
@@ -415,6 +415,9 @@ form button {
     max-width: calc(50% - 0.5 * var(--gutter));
     flex-basis: 35%;
   }
+  .footer{
+	gap: calc(2 * var(--grid-column-width) + var(--gutter));
+  }
 }
 
 /* stærra en 1000< */
@@ -433,5 +436,8 @@ form button {
     flex: 1;
     flex-basis: 25%;
     max-width: calc(4 * ((100% / var(--columns))) - var(--offset));
+  }
+  .footer {
+	gap: calc(2 * var(--grid-column-width) + 3 * var(--gutter));
   }
 }
