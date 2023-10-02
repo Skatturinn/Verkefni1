@@ -4,7 +4,6 @@
   padding: 0;
 }
 
-
 html {
   box-sizing: border-box;
 }
@@ -72,7 +71,7 @@ html {
   --grid-repeating-width: calc(100% / var(--columns));
   --grid-column-width: calc((100% / var(--columns)) - var(--gutter));
   --grid-background-width: calc(100% + var(--gutter));
-  /* SLÖKKT Á GRIDDI */
+  /* SLÖKKT Á OVERLAY GRIDDI */
   /* --grid-background-columns: repeating-linear-gradient(
     to right,
     var(--grid-color),
@@ -108,6 +107,19 @@ html::before {
 } */
 
 /* Almennt */
+/* fade in animation fyrir opnun síðu*/
+body {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 html,
 input,
@@ -219,21 +231,20 @@ img {
 .footer {
   display: flex;
   justify-content: center;
-  gap: var(--spacing);
 
   padding: var(--spacing);
   border-top: var(--border-large) solid var(--color-gold);
 
   background-color: var(--color-dark);
   color: var(--color-gold-light);
-
+  width: 100%;
   text-align: center;
+  gap: calc(2 * var(--grid-column-width) + 3 * var(--gutter));
 }
 
 .footer ul {
   list-style: none;
 }
-
 
 /* box fyrir skalanleika */
 .boxes {
@@ -269,13 +280,13 @@ img {
 }
 
 .boxes .box img {
-  /* align-items: center; */
   max-height: 400px;
   object-fit: cover;
   object-position: top center;
 }
 
 /* Nýr takki */
+
 .main .link {
   margin: auto 0 0 0;
   border-radius: var(--border-radius);
@@ -350,20 +361,6 @@ form button {
   border-radius: var(--border-radius);
 }
 
-/* fade in animation fyrir opnun síðu*/
-body {
-  animation: fadeIn 1s ease;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 /* Breytingar á byrtingum boxxa */
 /* <500 */
 @media (max-width: 500px) {
@@ -418,9 +415,6 @@ body {
     max-width: calc(50% - 0.5 * var(--gutter));
     flex-basis: 35%;
   }
-  .footer {
-    gap: 5rem;
-  }
 }
 
 /* stærra en 1000< */
@@ -439,8 +433,5 @@ body {
     flex: 1;
     flex-basis: 25%;
     max-width: calc(4 * ((100% / var(--columns))) - var(--offset));
-  }
-  .footer {
-    gap: calc(2 * var(--grid-column-width) + 3 * var(--gutter));
   }
 }
